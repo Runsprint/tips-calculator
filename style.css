@@ -1,0 +1,154 @@
+body{
+    font-family: 'Space Mono', monospace;
+    background-color: #9FE8DF;
+    font-family: 'Space Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.logo{
+    width: 375px;
+    height: 244px;
+    background: #9FE8DF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.bill_input,.people_input{
+    font-size: 23px;
+    padding-left: 285px;
+    border-width: 1px;
+    border-radius: 9px;
+    border-style: solid;
+    border-color: #d9d9d9;
+    width: 311px;
+    box-sizing: border-box;
+    height: 48px;
+    background-color: #F3F9FA;
+}
+.bill,.tip_h1,.numb_people,.amount,.total{
+    font-size: 16px;
+    font-weight: 700;
+    color: #5E7A7D;
+}
+.amount,.total{
+    color: #ffffff;
+}
+.span1,.span2{
+    color: #5E7A7D;
+}
+main{
+    width: 375px;
+    background: #ffffff;
+    border-radius: 23px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.percent{
+    width: 146px;
+    height: 48px;
+    border: none;
+    border-radius: 5px;
+    background: #00474B;
+    color: white;
+    font-size: 20px;
+}
+.five,.ten{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.second,.numb_people{
+    margin-top: 32px;
+}
+.inputwrapper{
+   position: relative;
+}
+.inputwrapper::after {
+    content: attr(data-required);
+    position: absolute;
+    font-size: 28px;
+    transform: translateY(-113%);
+    color: #9EBBBD;
+    font-weight: 15px;
+}
+.human_logo{
+    position: relative;
+    top: -36px;
+    left: 5px;
+}
+.last_div{
+    width: 327px;
+    height: 257px;
+    background: #00474B;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+}
+.tip_div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #26C2AE;
+    font-size: 20px;
+    gap: 87px;
+}
+.reset{
+    width: 281px;
+    height: 48px;
+    border-radius: 8px;
+    border: none;
+    background: #26C2AE;
+    font-weight: 700;
+}
+.custom{
+    color: #547878;
+    background: #F3F9FA;
+}
+@media (min-width:1440px){
+    main{
+        display: flex;
+        flex-direction: row;
+        width: 920px;
+        height: 481px;
+        justify-content: space-around;
+    }
+    .bill_input,.people_input{
+        width: 379px;
+        height: 48px;
+        padding-left: 325px;
+    }
+    .percent{
+        width: 117px;
+    }
+    .buttons{
+        flex-direction: column;
+        gap: 16px;
+    }
+    .five,.ten{
+        flex-direction: row;
+    }
+    .second{
+        margin-top: 0px;
+    }
+    .last_div{
+        width: 413px;
+        height: 400px;
+        margin-bottom: 0px;
+    }
+    .reset{
+        margin-top: 89px;
+    }
+    .tip_div{
+        margin-top: 20px;
+    }
+}
