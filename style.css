@@ -6,11 +6,11 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-height:100%;
 }
 .logo{
     width: 375px;
     height: 244px;
-    background: #9FE8DF;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,7 +18,7 @@ body{
 }
 .bill_input,.people_input{
     font-size: 23px;
-    padding-left: 285px;
+    padding-left: 251px;
     border-width: 1px;
     border-radius: 9px;
     border-style: solid;
@@ -93,6 +93,9 @@ main{
     flex-direction: column;
     align-items: center;
     margin-bottom: 32px;
+    
+    padding-top: 17px;
+
 }
 .tip_div{
     display: flex;
@@ -113,8 +116,44 @@ main{
 .custom{
     color: #547878;
     background: #F3F9FA;
+    width: 134px;
+    height: 43px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.cant{
+    color: red;
+    font-size: 10px;
+    text-align: right;
+    position: relative;
+    top: 53px;
+    display: none;
+    left: 223px;
+}
+.bill_input:hover{
+    border-color: #9FE8DF;
+    cursor: pointer;
+}
+.people_input:hover{
+    border-color: #9FE8DF;
+    cursor: pointer;
+}
+.percent:hover{
+    background-color: #9FE8DF;
+    cursor: pointer;
+}
+.custom:hover{
+    border-color: #9FE8DF;
+    cursor: pointer;
+}
+.reset:hover{
+    background-color: #9FE8DF;
+    cursor: pointer;
 }
 @media (min-width:1440px){
+    .cant{
+        left: 280px;
+    }
     main{
         display: flex;
         flex-direction: row;
@@ -146,9 +185,13 @@ main{
         margin-bottom: 0px;
     }
     .reset{
-        margin-top: 89px;
+        margin-top: 82px;
     }
     .tip_div{
         margin-top: 20px;
+    }
+    .custom{
+        width: 110px;
+        height: 44px;
     }
 }
