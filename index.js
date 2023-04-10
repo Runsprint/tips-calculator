@@ -10,7 +10,8 @@ let output1 = document.getElementById("output1"); //value
 let output2 = document.getElementById("output2");
 let reset = document.getElementById("reset");
 let cant = document.getElementById("cant");
-console.log(cant.textContent)
+
+let isButtonClicked = false;
 
 five.addEventListener("click", () =>{
     if(firstInput.value !== 0 && people_input.value !== 0){
@@ -19,13 +20,23 @@ five.addEventListener("click", () =>{
         let variable = firstInput.value +++ tip
         output2.textContent =  (variable / people_input.value).toFixed(2);
         five.style.backgroundColor = "#26C2AE";
+        fifteen.style.backgroundColor = "#00474B";
+        fiftee.style.backgroundColor = "#00474B";
+        twentyfive.style.backgroundColor = "#00474B";
+        ten.style.backgroundColor = "#00474B";
+        custom.style.borderColor = "#547878"; 
+        reset.style.backgroundColor = "#26C2AE";  
     };
     if(firstInput.value !== 0 && people_input.value == 0){
         cant.style.display = "flex"
         output1.textContent = " $00.00";
         output2.textContent = "$00.00";
         people_input.style.borderColor = "red";
-    }
+    }else {
+        cant.style.display = "none";
+        people_input.style.borderColor = "#d9d9d9";
+    } 
+    isButtonClicked = true;
 })
 
 fifteen.addEventListener("click", () =>{
@@ -35,13 +46,23 @@ fifteen.addEventListener("click", () =>{
        let variable = firstInput.value +++ tip
        output2.textContent = (variable / people_input.value).toFixed(2); 
        fifteen.style.backgroundColor = "#26C2AE";
+       five.style.backgroundColor = "#00474B";
+       fiftee.style.backgroundColor = "#00474B";
+       twentyfive.style.backgroundColor = "#00474B";
+       ten.style.backgroundColor = "#00474B";
+       custom.style.borderColor = "#547878";
+       reset.style.backgroundColor = "#26C2AE";
     } 
     if(firstInput.value !== 0 && people_input.value == 0){
         cant.style.display = "flex";
         output1.textContent = " $00.00";
         output2.textContent = "$00.00";
         people_input.style.borderColor = "red";
-    }   
+    } else {
+        cant.style.display = "none";
+        people_input.style.borderColor = "#d9d9d9";
+    }  
+    isButtonClicked = true; 
 })
 
 fiftee.addEventListener("click", () =>{
@@ -50,15 +71,24 @@ fiftee.addEventListener("click", () =>{
         output1.textContent = (tip / people_input.value).toFixed(2); 
         let variable = firstInput.value +++ tip
         output2.textContent = (variable / people_input.value).toFixed(2);
-        fiftee.style.backgroundColor = "#26C2AE";  
+        fiftee.style.backgroundColor = "#26C2AE";
+        fifteen.style.backgroundColor = "#00474B";
+        five.style.backgroundColor = "#00474B";
+        twentyfive.style.backgroundColor = "#00474B";
+        ten.style.backgroundColor = "#00474B";
+        custom.style.borderColor = "#547878"; 
+        reset.style.backgroundColor = "#26C2AE"; 
      }  
      if(firstInput.value !== 0 && people_input.value == 0){
         cant.style.display = "flex";
         output1.textContent = " $00.00";
         output2.textContent = "$00.00";
         people_input.style.borderColor = "red";
-    }
-  
+    }else {
+        cant.style.display = "none";
+        people_input.style.borderColor = "#d9d9d9";
+    } 
+    isButtonClicked = true;
 })
 
 ten.addEventListener("click", () =>{
@@ -68,13 +98,23 @@ ten.addEventListener("click", () =>{
         let variable = firstInput.value +++ tip
         output2.textContent = (variable / people_input.value).toFixed(2);  
         ten.style.backgroundColor = "#26C2AE"; 
+        fiftee.style.backgroundColor = "#00474B";
+        fifteen.style.backgroundColor = "#00474B";
+        five.style.backgroundColor = "#00474B";
+        twentyfive.style.backgroundColor = "#00474B";
+        custom.style.borderColor = "#547878";
+        reset.style.backgroundColor = "#26C2AE";
      } 
      if(firstInput.value !== 0 && people_input.value == 0){
         cant.style.display = "flex";
         output1.textContent = " $00.00";
         output2.textContent = "$00.00";
         people_input.style.borderColor = "red";
-    }
+    }else {
+        cant.style.display = "none";
+        people_input.style.borderColor = "#d9d9d9";
+    } 
+    isButtonClicked = true;
 })
 
 twentyfive.addEventListener("click", () =>{
@@ -84,13 +124,23 @@ twentyfive.addEventListener("click", () =>{
         let variable = firstInput.value +++ tip
         output2.textContent = (variable / people_input.value).toFixed(2); 
         twentyfive.style.backgroundColor = "#26C2AE"; 
+        ten.style.backgroundColor = "#00474B"; 
+        fiftee.style.backgroundColor = "#00474B";
+        fifteen.style.backgroundColor = "#00474B";
+        five.style.backgroundColor = "#00474B";
+        custom.style.borderColor = "#547878";
+        reset.style.backgroundColor = "#26C2AE";
      } 
     if(firstInput.value !== 0 && people_input.value == 0){
         cant.style.display = "flex";
         output1.textContent = " $00.00";
         output2.textContent = "$00.00";
         people_input.style.borderColor = "red";
-    }    
+    } else {
+       cant.style.display = "none";
+       people_input.style.borderColor = "#d9d9d9";
+    } 
+    isButtonClicked = true;  
 })
 
 custom.addEventListener("input", () =>{
@@ -100,12 +150,25 @@ custom.addEventListener("input", () =>{
         let variable = firstInput.value +++ tip;
         output2.textContent = (variable / people_input.value).toFixed(2);  
         custom.style.borderColor = "#9FE8DF";
+        twentyfive.style.backgroundColor = "#00474B"; 
+        ten.style.backgroundColor = "#00474B"; 
+        fiftee.style.backgroundColor = "#00474B";
+        fifteen.style.backgroundColor = "#00474B";
+        five.style.backgroundColor = "#00474B";
+        reset.style.backgroundColor = "#26C2AE";
+
+        if(isButtonClicked) {
+            custom.value = "";
+        }
      } 
     if(firstInput.value !== 0 && people_input.value == 0){
         cant.style.display = "flex";
         people_input.style.borderColor = "red";
         output1.textContent = " $00.00";
         output2.textContent = "$00.00";
+    }else {
+        cant.style.display = "none";
+        people_input.style.borderColor = "#d9d9d9";
     }  
 })
 reset.addEventListener("click", ()=>{

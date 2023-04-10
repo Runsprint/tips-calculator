@@ -18,7 +18,7 @@ body{
 }
 .bill_input,.people_input{
     font-size: 23px;
-    padding-left: 251px;
+    text-align: right;
     border-width: 1px;
     border-radius: 9px;
     border-style: solid;
@@ -42,7 +42,8 @@ body{
 main{
     width: 375px;
     background: #ffffff;
-    border-radius: 23px;
+    border-top-right-radius: 23px;
+    border-top-left-radius: 23px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -110,14 +111,15 @@ main{
     height: 48px;
     border-radius: 8px;
     border: none;
-    background: #26C2AE;
+    background:#0D686D ;
     font-weight: 700;
+    margin-top: 33px;
 }
 .custom{
     color: #547878;
     background: #F3F9FA;
-    width: 134px;
-    height: 43px;
+    width: 139px;
+    height: 42px;
     border-radius: 5px;
     font-size: 20px;
 }
@@ -160,6 +162,7 @@ main{
         width: 920px;
         height: 481px;
         justify-content: space-around;
+        border-radius: 23px;
     }
     .bill_input,.people_input{
         width: 379px;
@@ -185,13 +188,16 @@ main{
         margin-bottom: 0px;
     }
     .reset{
-        margin-top: 82px;
+        margin-top: 135px;
     }
     .tip_div{
         margin-top: 20px;
     }
     .custom{
         width: 110px;
-        height: 44px;
+        height: 41px;
+    }
+    .output1 ,.output2{
+        margin: 0px;
     }
 }
