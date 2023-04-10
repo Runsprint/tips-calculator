@@ -19,7 +19,7 @@
         <div class="second">
             <div class="first">
             <h1 class="bill">Bill</h1>
-            <input class="bill_input" id="bill_input" type="number" placeholder="0" >
+            <input class="bill_input" id="bill_input" type="number" min="1" placeholder="0" oninput="validity.valid||(value='');">
             <div class="inputwrapper" data-required="$"></div>
         </div>
             <div><h1 class="tip_h1">Select Tip %</h1></div>
@@ -32,13 +32,13 @@
                 <div class="ten">
                   <button id="ten" class="percent">10%</button> 
                   <button id="twentyfive" class="percent">25%</button> 
-                  <input type="numbe" min="1" max="100" id="custom" class="custom" placeholder="Custom">  
+                  <input type="number" min="1" max="100" id="custom" class="custom" placeholder="Custom" oninput="validity.valid||(value='');">  
                 </div> 
             </div>
             <div class="num_people">
                 <h2 class="cant" id="cant">Can’t be zero</h2>
                 <h1 class="numb_people">Number of People</h1>
-                <input id="people_input" class="people_input" type="number" placeholder="0">
+                <input id="people_input" class="people_input" type="number" placeholder="0" min="0" oninput="validity.valid||(value='');">
                 <div class="inputwrapper"> <img class="human_logo" src="./images/icon-person.svg"></div>
             </div>
         </div>
@@ -51,7 +51,7 @@
                 <h1 class="total">Total <br> <span class="span2">/ person</span></h1>
                 <div class="output_div"> <h2 class="output2" id="output2">$0.00</h2></div>
             </div>
-            <button onclick='refresh()' id="reset" class="reset">RESET</button>
+            <button id="reset" class="reset">RESET</button>
         </div>
     </main>
 </body>

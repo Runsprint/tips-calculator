@@ -10,11 +10,24 @@ let output1 = document.getElementById("output1"); //value
 let output2 = document.getElementById("output2");
 let reset = document.getElementById("reset");
 let cant = document.getElementById("cant");
-
-let isButtonClicked = false;
-
+//this isButtonClicked is for  if one button is clicked, u cant clicked and write some value into "custome" button
+// let isButtonClicked = false;
+//and I used custom.disabled = true; cuz I wanted when I clicked any button , in custom I cant write some value
+function changes() {
+    if(firstInput.value !== 0 && people_input.value == 0){
+        cant.style.display = "flex"
+        output1.textContent = " $00.00";
+        output2.textContent = "$00.00";
+        people_input.style.borderColor = "red";
+    }else {
+        cant.style.display = "none";
+        people_input.style.borderColor = "#d9d9d9";
+    } 
+    
+}
+// i used oninput="validity.valid||(value='');"< for input values be just possitive numbers
 five.addEventListener("click", () =>{
-    if(firstInput.value !== 0 && people_input.value !== 0){
+    if(firstInput.value !== 0 && people_input.value !== 0){ 
         let tip = (firstInput.value * 0.05);
         output1.textContent = (tip / people_input.value).toFixed(2); 
         let variable = firstInput.value +++ tip
@@ -27,18 +40,9 @@ five.addEventListener("click", () =>{
         custom.style.borderColor = "#547878"; 
         reset.style.backgroundColor = "#26C2AE";  
     };
-    if(firstInput.value !== 0 && people_input.value == 0){
-        cant.style.display = "flex"
-        output1.textContent = " $00.00";
-        output2.textContent = "$00.00";
-        people_input.style.borderColor = "red";
-    }else {
-        cant.style.display = "none";
-        people_input.style.borderColor = "#d9d9d9";
-    } 
-    isButtonClicked = true;
+    changes();
+    custom.disabled = true;
 })
-
 fifteen.addEventListener("click", () =>{
     if(firstInput.value !== 0 && people_input.value !== 0){
        let tip = (firstInput.value * 0.15);
@@ -53,18 +57,9 @@ fifteen.addEventListener("click", () =>{
        custom.style.borderColor = "#547878";
        reset.style.backgroundColor = "#26C2AE";
     } 
-    if(firstInput.value !== 0 && people_input.value == 0){
-        cant.style.display = "flex";
-        output1.textContent = " $00.00";
-        output2.textContent = "$00.00";
-        people_input.style.borderColor = "red";
-    } else {
-        cant.style.display = "none";
-        people_input.style.borderColor = "#d9d9d9";
-    }  
-    isButtonClicked = true; 
+    changes();
+    custom.disabled = true;
 })
-
 fiftee.addEventListener("click", () =>{
     if(firstInput.value !== 0 && people_input.value !== 0){
         let tip = (firstInput.value * 0.5);
@@ -79,18 +74,9 @@ fiftee.addEventListener("click", () =>{
         custom.style.borderColor = "#547878"; 
         reset.style.backgroundColor = "#26C2AE"; 
      }  
-     if(firstInput.value !== 0 && people_input.value == 0){
-        cant.style.display = "flex";
-        output1.textContent = " $00.00";
-        output2.textContent = "$00.00";
-        people_input.style.borderColor = "red";
-    }else {
-        cant.style.display = "none";
-        people_input.style.borderColor = "#d9d9d9";
-    } 
-    isButtonClicked = true;
+     changes();
+     custom.disabled = true;
 })
-
 ten.addEventListener("click", () =>{
     if(firstInput.value !== 0 && people_input.value !== 0){
         let tip = (firstInput.value * 0.1);
@@ -105,18 +91,9 @@ ten.addEventListener("click", () =>{
         custom.style.borderColor = "#547878";
         reset.style.backgroundColor = "#26C2AE";
      } 
-     if(firstInput.value !== 0 && people_input.value == 0){
-        cant.style.display = "flex";
-        output1.textContent = " $00.00";
-        output2.textContent = "$00.00";
-        people_input.style.borderColor = "red";
-    }else {
-        cant.style.display = "none";
-        people_input.style.borderColor = "#d9d9d9";
-    } 
-    isButtonClicked = true;
+     changes();
+     custom.disabled = true;
 })
-
 twentyfive.addEventListener("click", () =>{
     if(firstInput.value !== 0 && people_input.value !== 0){
         let tip = (firstInput.value * 0.25);
@@ -131,18 +108,9 @@ twentyfive.addEventListener("click", () =>{
         custom.style.borderColor = "#547878";
         reset.style.backgroundColor = "#26C2AE";
      } 
-    if(firstInput.value !== 0 && people_input.value == 0){
-        cant.style.display = "flex";
-        output1.textContent = " $00.00";
-        output2.textContent = "$00.00";
-        people_input.style.borderColor = "red";
-    } else {
-       cant.style.display = "none";
-       people_input.style.borderColor = "#d9d9d9";
-    } 
-    isButtonClicked = true;  
+    changes();
+    custom.disabled = true;
 })
-
 custom.addEventListener("input", () =>{
     if(firstInput.value !== 0 && people_input.value !== 0 ){
         let tip = ((custom.value / 100)*firstInput.value);
@@ -156,22 +124,9 @@ custom.addEventListener("input", () =>{
         fifteen.style.backgroundColor = "#00474B";
         five.style.backgroundColor = "#00474B";
         reset.style.backgroundColor = "#26C2AE";
-
-        if(isButtonClicked) {
-            custom.value = "";
-        }
      } 
-    if(firstInput.value !== 0 && people_input.value == 0){
-        cant.style.display = "flex";
-        people_input.style.borderColor = "red";
-        output1.textContent = " $00.00";
-        output2.textContent = "$00.00";
-    }else {
-        cant.style.display = "none";
-        people_input.style.borderColor = "#d9d9d9";
-    }  
+    custom();   
 })
 reset.addEventListener("click", ()=>{
     location.reload();
-
 })
