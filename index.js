@@ -73,7 +73,14 @@ custom.addEventListener("input", () =>{
 })
 
 reset.addEventListener("click", ()=>{
-    location.reload();
+    firstInput.value = null;
+    people_input.value = null;
+    output1.textContent = " $00.00";
+    output2.textContent = " $00.00"; 
+    custom.value = null;
+    buttons.forEach(function(element){
+        element.style.backgroundColor = "#00474B"
+    })
 })
 
 
